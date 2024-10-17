@@ -10,7 +10,9 @@ public class BoundaryLibererEtal {
 	}
 
 	public void libererEtal(String nomVendeur) {
-		//TODO a completer
+		//TODO 
+		boolean vendeurReconnu=controlLibererEtal.isVendeur(nomVendeur);
+		
 	}
 
 }
