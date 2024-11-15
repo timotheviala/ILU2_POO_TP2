@@ -17,7 +17,7 @@ class ControlLibererEtalTest {
 	
 	@BeforeEach
 	void init(){
-		System.out.println("Initialisation test controleur libérer étal...");
+		System.out.println("Initialisation test controleur libï¿½rer ï¿½tal...");
 		village=new Village("Gaulois",10,10);
 		Chef boss=new Chef("Boss",3,village);
 		village.setChef(boss);
@@ -26,8 +26,21 @@ class ControlLibererEtalTest {
 	}
 	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testIsVendeur() {
+		Gaulois falbala=new Gaulois("Falbala",3);
+		village.ajouterHabitant(falbala);
+		village.installerVendeur(falbala, "rose", 10);
+		assertTrue(controlLibererEtal.isVendeur("Falbala"));
+		assertFalse(controlLibererEtal.isVendeur("ObÃ©lix"));
+	}
+	
+	@Test
+	void testLibererEtal() {
+		Gaulois falbala=new Gaulois("Falbala",3);
+		village.ajouterHabitant(falbala);
+		village.installerVendeur(falbala, "rose", 10);
+		assertEquals("true",controlTrouverEtalVendeur.trouverEtalVendeur("Falbala").etatEtal()[0]);
+		assertEquals("false",controlLibererEtal.libererEtal("Falbala")[0]);
 	}
 
 }

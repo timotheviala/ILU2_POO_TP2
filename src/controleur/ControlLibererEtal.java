@@ -30,6 +30,7 @@ public class ControlLibererEtal {
 		//TODO a completer
 		String[] donneesEtal;
 		Etal etal=controlTrouverEtalVendeur.trouverEtalVendeur(nomVendeur);
+		etal.libererEtal();
 		donneesEtal=etal.etatEtal();
 		return donneesEtal;
 	}
