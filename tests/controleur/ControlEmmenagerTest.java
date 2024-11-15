@@ -11,24 +11,20 @@ import villagegaulois.Village;
 class ControlEmmenagerTest {
 	private Village village;
 	private Chef abraracourcix;
+	private ControlEmmenager controlEmmenager;
 	
 	@BeforeEach
 	public void initialiserSituation() {
 		System.out.println("Initialisation test controleurEmmenager...");
 		village=new Village("le village des irréductibles",10,5);
 		abraracourcix=new Chef("Abraracourcix",10,village);
+		controlEmmenager=new ControlEmmenager(village);
 		village.setChef(abraracourcix);
 	}
 	
-	@Test
-	void testControlEmmenager() {
-		ControlEmmenager controlEmmenager=new ControlEmmenager(village);
-		assertNotNull(controlEmmenager,"different null");
-	}
 	
 	@Test
 	void testisHabitantExiste() {
-		ControlEmmenager controlEmmenager=new ControlEmmenager(village);
 		controlEmmenager.ajouterGaulois("Astérix",23);
 		controlEmmenager.ajouterDruide("Panoramix", 3, 43, 78);
 		assertTrue(controlEmmenager.isHabitant("Astérix"));
@@ -37,7 +33,6 @@ class ControlEmmenagerTest {
 	
 	@Test
 	void testisHabitantExistePas() {
-		ControlEmmenager controlEmmenager=new ControlEmmenager(village);
 		assertFalse(controlEmmenager.isHabitant("César"));
 	}
 

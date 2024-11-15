@@ -14,7 +14,6 @@ public class BoundaryAcheterProduit {
 	}
 
 	public void acheterProduit(String nomAcheteur) {
-		// TODO à completer
 		boolean estVillageois=controlAcheterProduit.verifierIdentiteClient(nomAcheteur);
 		if(!estVillageois) {
 			System.out.println("Je suis désolé "+nomAcheteur+" mais il faut être un"
